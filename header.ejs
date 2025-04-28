@@ -1,0 +1,24 @@
+<header class="app-header">
+  <div class="header-left">
+    <a href="/chat" class="logo">Secure Messenger</a>
+  </div>
+  
+  <div class="header-center">
+    <form action="/users/search" method="GET" class="search-form">
+      <input type="text" name="q" placeholder="Search users..." value="<%= typeof query !== 'undefined' ? query : '' %>">
+      <button type="submit"><i class="fas fa-search"></i></button>
+    </form>
+  </div>
+  
+  <div class="header-right">
+    <div class="user-menu">
+      <img src="<%= currentUser.avatar %>" alt="<%= currentUser.username %>" class="avatar">
+      <span><%= currentUser.username %></span>
+      <div class="dropdown">
+        <a href="/profile"><i class="fas fa-user"></i> Profile</a>
+        <a href="/groups"><i class="fas fa-users"></i> Groups</a>
+        <a href="/logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+      </div>
+    </div>
+  </div>
+</header>
